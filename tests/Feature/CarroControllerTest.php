@@ -25,4 +25,10 @@ class CarroControllerTest extends TestCase
         Carro::factory()->count(3)->create();
         return [];
     }
+
+    public function testStore()
+    {
+        Carro::factory()->count(3)->create();
+        return [];
+    }
 }
