@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-lastest
 
     steps:
       - name: Checkout code
@@ -29,14 +29,14 @@ jobs:
       #  run: vendor/bin/phpunit
 
   deploy:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-lastest
     needs: build
 
     steps:
       - name: SSH to EC2
         uses: appleboy/ssh-action@v0.1.1
         with:
-          host: 3.131.36.166
+          host: "ec2-3-131-36-166.us-east-2.compute.amazonaws.com"
           username: ec2-user
           key: ${{ secrets.EC2_KEY }}
           script: |
