@@ -26,6 +26,7 @@ class CarroControllerTest extends TestCase
         return [];
     }
 
+    
     public function testStore()
     {
         Carro::factory()->count(3)->create();
